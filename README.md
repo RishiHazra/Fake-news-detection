@@ -20,7 +20,7 @@ contains the code for cnn model implementation on the text data.
 
 ### Checklist:
 - [x] process metadata 
-- [ ] process text data
+- [x] process text data
 - [ ] if time permits, dominant feature selection through svd
 - [ ] XGBoost on metadata
 - [x] CNN model 
