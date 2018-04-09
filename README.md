@@ -5,7 +5,7 @@ Fake News Detection on Liar dataset
 ## DataPrep.py:
 for preprecessing the metadata and the text data. 
 
-**@sourabh :bowtie:- please take care of the multilabel binarizer in this code for the test data. you will find it under the heading**
+**@Grand Master :bowtie:- please take care of the multilabel binarizer in this code (DataPrep.py) for the test data. you will find it under the heading**
 >*Processing the metadata*
 
 ## FeatureSelection.py:
@@ -16,3 +16,13 @@ contains classifiers like lienar svm, svm with sgd, naive-bayes, random forest a
 
 ## cnn_model.py and text_cnn.py:
 contains the code for cnn model implementation on the text data.
+
+
+### Checklist:
+-[x] procedd metadata 
+-[]  process text data
+-[]  if time permits, dominant feature selection through svd
+-[]  XGBoost on metadata
+-[x] CNN model 
+-[]  LSTM model
+-[]  Combine the best models
