@@ -158,8 +158,8 @@ with g.as_default():
         
         # Checkpointing
         print("checkpointing...")
-        checkpoint_dir = os.path.abspath(os.path.join(out_dir, "checkpoints"))
-        checkpoint_prefix = os.path.join(checkpoint_dir, "model")
+        checkpoint_dir = os.path.abspath(os.path.join(out_dir, "checkpoints1"))
+        checkpoint_prefix = os.path.join(checkpoint_dir, "model1")
         # Tensorflow assumes this directory already exists so we need to create it
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
