@@ -19,7 +19,7 @@ class TextCNN(object):
       embedding_size, filter_sizes, num_filters, l2_reg_lambda=0.0):
         
         
-# sequence_length = The length of our sentences. We padded all our sentences to have the same length (302 for our data set).
+# sequence_length = The length of our sentences. We padded all our sentences to have the same length (573 for our data set).
         
 # num_classes = Number of classes in the output layer.
         
@@ -41,7 +41,7 @@ class TextCNN(object):
 # None means that the length of that dimension could be anything. In our case, the first dimension is the batch size, and using None allows the network to handle arbitrarily sized batches.
         
 
-        ''' Keeping track of l2 regularization loss (optional) '''
+        ''' Keeping track of l2 regularization loss '''
         l2_loss = tf.constant(0.0)
 
         ''' Embedding layer '''

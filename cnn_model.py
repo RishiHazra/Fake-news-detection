@@ -18,8 +18,39 @@ import sys
 from tensorflow.contrib import learn
 from text_cnn import TextCNN
 import data_helpers as dh
+import pandas as pd
+from sklearn.preprocessing import MultiLabelBinarizer
 
 
+#================================= Loading data ==============================#
+
+print("Loading data...")
+
+with open('test+train.tsv',encoding='utf8') as tsvfile:
+     train_test_data = pd.read_csv(tsvfile, delimiter='\t',header=None)
+     tsvfile.close()
+     
+with open('test.tsv',encoding='utf8') as tsvfile:
+    test_data=pd.read_csv(tsvfile, delimiter='\t', header=None)
+    tsvfile.close()
+    
+with open('train.tsv',encoding='utf8') as tsvfile:
+    train_data=pd.read_csv(tsvfile, delimiter='\t', header=None)
+    tsvfile.close()
+    
+    
+test_text=test_data[2]
+Y_test=test_data[1]
+
+train_test_text=train_test_data[2]
+Y_train_test=train_test_data[1]
+     
+train_text=train_data[2]
+Y_train=train_data[1]
+
+del test_data, train_test_data, train_data
+
+#============================== Model Parameters =================================#
 
 # Model Hyperparameters
 tf.flags.DEFINE_integer("embedding_dim",128, " Dimensionality of character embedding (default: 128)")
@@ -172,7 +203,9 @@ with g.as_default():
         # Training loop. For each batch...
         for batch in batches:
             print("inside loop...")
+#            print('batch',batch[1,1])
             x_batch, y_batch = zip(*batch)
+#            print('x_batch, y_batch',x_batch, y_batch)
             train_step(x_batch, y_batch)
             current_step = tf.train.global_step(sess, global_step)
             if current_step % FLAGS.evaluate_every == 0:    
