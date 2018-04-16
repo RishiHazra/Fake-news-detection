@@ -105,7 +105,7 @@ ypred = bst.predict(dtest)
 
 accuracy=0
 for i in range(ypred.shape[0]):
-    accuracy += int(pred_svc[i] == Y_test[i]) 
+    accuracy += int(ypred[i] == Y_test[i]) 
 accuracy/ypred.shape[0]
 
 
