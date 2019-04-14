@@ -5,7 +5,6 @@ Fake News Detection on Liar dataset
 ## DataPrep.py:
 for preprecessing the metadata and the text data. 
 
-**@Grand Master :bowtie:- please take care of the multilabel binarizer in this code (DataPrep.py) for the test data. you will find it under the heading**
 >*Processing the metadata*
 
 ## FeatureSelection.py:
